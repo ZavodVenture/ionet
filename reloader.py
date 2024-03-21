@@ -13,6 +13,8 @@ args = parser.parse_args()
 def reload():
     command = f'./launch_binary_linux --device_id={args.device_id} --user_id={args.user_id} --operating_system="Linux" --usegpus=false --device_name={args.device_name}'
     system(command)
+    sleep(2)
+    system(command)
 
 
 def worker():
