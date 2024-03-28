@@ -3,14 +3,6 @@ from os import system
 from time import sleep
 import requests
 
-parser = argparse.ArgumentParser()
-parser.add_argument('device_id')
-parser.add_argument('user_id')
-parser.add_argument('device_name')
-parser.add_argument('delay')
-args = parser.parse_args()
-
-
 def get_token():
     token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im14dGZka3BweHlmbG1tZ2x1bGxmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDgwNDI1ODEsImV4cCI6MjAyMzYxODU4MX0.mNkDiJaCBB5twRNypzThEKl-s8d5VjasNyJj1l9BK9o'
     refresh_token = open('refresh_token').read()
@@ -77,4 +69,10 @@ def worker():
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('device_id')
+    parser.add_argument('user_id')
+    parser.add_argument('device_name')
+    parser.add_argument('delay')
+    args = parser.parse_args()
     worker()
