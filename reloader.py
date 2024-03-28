@@ -62,11 +62,14 @@ def reload():
 def worker():
     while 1:
         sleep(int(args.delay))
-
-        try:
-            reload()
-        except Exception as e:
-            print(f'Ошибка: {e}')
+        
+        for i in range(3):
+            try:
+                reload()
+            except Exception as e:
+                print(f'Ошибка: {e}')
+            else:
+                break
 
 
 if __name__ == '__main__':
