@@ -39,10 +39,9 @@ def get_node_status(token):
         raise Exception(f'Ошибка во время получения статуса ноды: {e}')
     else:
         r = r.json()
-        
-        print(r)
+
         if 'status' in r and r['status'] == 'succeeded':
-            return r['devices'][0]['status']
+            return r['data']['devices'][0]['status']
         else:
             raise Exception(f'Ошибка во время получения статуса ноды: {r}')
 
