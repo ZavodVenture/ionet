@@ -36,14 +36,14 @@ def get_node_status(token):
                                  'page_size': 20},
                          headers={'Token': token})
     except Exception as e:
-        raise Exception('Ошибка во время получения статуса ноды')
+        raise Exception(f'Ошибка во время получения статуса ноды: {e}')
     else:
         r = r.json()
 
         if 'status' in r and r['status'] == 'succeed':
             return r['devices'][0]['status']
         else:
-            raise Exception('Ошибка во время получения статуса ноды')
+            raise Exception(f'Ошибка во время получения статуса ноды: {r}')
 
 
 def reload():
