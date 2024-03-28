@@ -6,6 +6,7 @@ import requests
 def get_token():
     token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im14dGZka3BweHlmbG1tZ2x1bGxmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDgwNDI1ODEsImV4cCI6MjAyMzYxODU4MX0.mNkDiJaCBB5twRNypzThEKl-s8d5VjasNyJj1l9BK9o'
     refresh_token = open('refresh_token').read().replace('\n', '')
+    print(f'current token: {refresh_token}')
 
     try:
         r = requests.post('https://id.io.net/auth/v1/token?grant_type=refresh_token',
