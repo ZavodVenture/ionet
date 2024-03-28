@@ -61,8 +61,6 @@ def reload():
 
 def worker():
     while 1:
-        sleep(int(args.delay))
-        
         for i in range(3):
             try:
                 reload()
@@ -70,6 +68,7 @@ def worker():
                 print(f'Ошибка: {e}')
             else:
                 break
+        sleep(int(args.delay))
 
 
 if __name__ == '__main__':
