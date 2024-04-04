@@ -31,7 +31,7 @@ def get_token():
 def get_node_status(token):
 
     try:
-        r = requests.get(f'https://production.io.systems/v1/io-worker/users/{args.user_id}/devices',
+        r = requests.get(f'https://api.io.solutions/v1/io-worker/users/{args.user_id}/devices',
                          params={'page': 1,
                                  'page_size': 20},
                          headers={'Token': token})
